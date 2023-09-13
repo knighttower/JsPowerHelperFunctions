@@ -1,6 +1,6 @@
 {
     "name": "@knighttower/js-power-helper-functions",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "src/JsPowerHelperFunctions.js",
     "module": "src/JsPowerHelperFunctions.js",
     "unpkg": "dist/JsPowerHelperFunctions.js",
