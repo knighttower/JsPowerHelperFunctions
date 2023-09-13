@@ -3,8 +3,7 @@
 
 This file was created as part of "adaptive.js" (https://github.com/knighttower/adaptive.js) but it can use in any project by itself due to the functionality offered by its module functions.  
 Find oter cool things at [knighttower.io](https://knighttower.io)  
-[![release version](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/pre-release.yml/badge.svg)](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/pre-release.yml)  
-[![NPM published](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/to-npm.yml/badge.svg)](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/to-npm.yml)
+[![release version](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/pre-release.yml/badge.svg?branch=development)](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/pre-release.yml)[![NPM published](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/to-npm.yml/badge.svg?branch=development)](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/to-npm.yml)
 
 
 ## Table of Contents
