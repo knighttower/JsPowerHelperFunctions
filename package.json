@@ -1,0 +1,43 @@
+{
+    "name": "@knighttower/js-power-helper-functions",
+    "version": "1.0.0",
+    "main": "src/JsPowerHelperFunctions.js",
+    "module": "src/JsPowerHelperFunctions.js",
+    "unpkg": "dist/JsPowerHelperFunctions.js",
+    "jsdelivr": "dist/JsPowerHelperFunctions.js",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "license": "MIT",
+    "description": "JsPowerHelperFunctions is a JavaScript class that adds extra functionality to interact with DOM elements. This class is part of a larger project and can be imported from the @knighttower/adaptive package.",
+    "homepage": "https://github.com/knighttower/JsPowerHelperFunctions",
+    "author": "knighttower (https://github.com/knighttower)",
+    "keywords": [
+        "Utility",
+        "Vue",
+        "library",
+        "plugin",
+        "JsPowerHelperFunctions",
+        "Vue 2",
+        "Vue 3",
+        "javascript",
+        "Adaptive",
+        "DOM",
+        "functions",
+        "helper",
+        "knighttower"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/knighttower/JsPowerHelperFunctions.git"
+    },
+    "scripts": {
+        "dev": "mix",
+        "test": "vitest"
+    },
+    "devDependencies": {
+        "laravel-mix": "^6.0.49",
+        "vitest": "^0.34.4"
+    }
+}
