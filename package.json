@@ -1,6 +1,6 @@
 {
     "name": "@knighttower/js-power-helper-functions",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "src/JsPowerHelperFunctions.js",
     "module": "src/JsPowerHelperFunctions.js",
     "unpkg": "dist/JsPowerHelperFunctions.js",
@@ -10,7 +10,7 @@
         "src"
     ],
     "license": "MIT",
-    "description": "JsPowerHelperFunctions is a JavaScript class that adds extra functionality to interact with DOM elements. This class is part of a larger project and can be imported from the @knighttower/adaptive package.",
+    "description": "JsPowerHelperFunctions is a JavaScript class that adds extra functionality for complex functions. This class is part of a larger project and can be imported from the @knighttower/adaptive package.",
     "homepage": "https://github.com/knighttower/JsPowerHelperFunctions",
     "author": "knighttower (https://github.com/knighttower)",
     "keywords": [
