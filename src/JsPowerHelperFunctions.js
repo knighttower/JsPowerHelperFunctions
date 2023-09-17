@@ -376,6 +376,7 @@ function addQuotes(str) {
 }
 const powerHelper = {
     getDirectivesFromString,
+    findAndReplaceInArray,
     getMatchInBetween,
     getMatchBlock,
     cleanStr,
@@ -387,6 +388,7 @@ const powerHelper = {
 };
 export {
     getDirectivesFromString,
+    findAndReplaceInArray,
     getMatchInBetween,
     getMatchBlock,
     cleanStr,
