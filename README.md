@@ -1,3 +1,38 @@
+# Note:
+
+**For better maintenance, this library has been placed along with JsUtilities (https://github.com/knighttower/JsUtility) to create an easier entry point for many resources that will collaborate together**
+--> only the docs will remain here for now.
+
+## Installation
+
+```javascript
+npm i @knighttower/js-utility-functions
+```
+
+```javascript
+yarn add @knighttower/js-utility-functions
+```
+
+```javascript
+import PowerHelpers from '@knighttower/js-utility-functions';
+```
+
+## In the browser
+
+It loads as a 'window' object --> window.PowerHelpers
+
+```html
+<script src=" https://cdn.jsdelivr.net/npm/@knighttower/js-utility-functions@latest/dist/browser/PowerHelpers.min.js"></script>
+
+// ---> Also available as ESM, UMD, CJS, JS // ESM
+<script src="https://esm.run/@knighttower/js-utility-functions@latest/index.mjs"></script>
+// UMD
+<script src="https://cdn.jsdelivr.net/npm/@knighttower/js-utility-functions@latest/dist/umd/PowerHelpers.min.js"></script>
+// CJS
+<script src="https://cdn.jsdelivr.net/npm/@knighttower/js-utility-functions@latest/dist/cjs/PowerHelpers.min.js"></script>
+```
+
+<br>
 
 # PowerHelper Library Documentation
 
@@ -5,67 +40,73 @@ This file was created as part of "adaptive.js" (https://github.com/knighttower/a
 Find oter cool things at [knighttower.io](https://knighttower.io)  
 [![release version](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/pre-release.yml/badge.svg?branch=development)](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/pre-release.yml)[![NPM published](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/to-npm.yml/badge.svg?branch=development)](https://github.com/knighttower/JsPowerHelperFunctions/actions/workflows/to-npm.yml)
 
-
 ## Table of Contents
-- [getDirectivesFromString](#getDirectivesFromString)
-- [findAndReplaceInArray](#findAndReplaceInArray)
-- [getMatchInBetween](#getMatchInBetween)
-- [getMatchBlock](#getMatchBlock)
-- [cleanStr](#cleanStr)
-- [setExpString](#setExpString)
-- [setLookUpExp](#setLookUpExp)
-- [removeQuotes](#removeQuotes)
-- [fixQuotes](#fixQuotes)
-- [addQuotes](#addQuotes)
+
+-   [getDirectivesFromString](#getDirectivesFromString)
+-   [findAndReplaceInArray](#findAndReplaceInArray)
+-   [getMatchInBetween](#getMatchInBetween)
+-   [getMatchBlock](#getMatchBlock)
+-   [cleanStr](#cleanStr)
+-   [setExpString](#setExpString)
+-   [setLookUpExp](#setLookUpExp)
+-   [removeQuotes](#removeQuotes)
+-   [fixQuotes](#fixQuotes)
+-   [addQuotes](#addQuotes)
 
 ---
 
 ### getDirectivesFromString
 
-
 **Note**: All the above with the exception of the Id/class will be converted into actual objects
 
 **Function Signature**
+
 ```javascript
 function getDirectivesFromString(settings: String|Array|Object): Object|void|null;
 ```
+
 Converts strings formats into objects.
 
-- **Function**: `getDirectivesFromString(settings)`
-- **Parameters**: `{String|Array|Object} settings`
-- **Returns**: `{Object|void|null}`  
+-   **Function**: `getDirectivesFromString(settings)`
+-   **Parameters**: `{String|Array|Object} settings`
+-   **Returns**: `{Object|void|null}`
 
 Handles the following patterns to get an object from string attributes:
-- Matches the JSON objects as string: {'directive':{key:value}} OR {key:value}
-- Matches the Array as string: [value, value] OR ['value','value']
-- Matches a multi-array string like [[value,value]],value]
-- Matches object-style strings: directive.tablet(...values) OR directive[expression](...values)
-- Matches string ID or class: literals Id(#) or class (.). Note that in Vue it needs to be in quotes attr="'#theId'"
-- Matches simple directive function style: directive(#idOr.Class)  
+
+-   Matches the JSON objects as string: {'directive':{key:value}} OR {key:value}
+-   Matches the Array as string: [value, value] OR ['value','value']
+-   Matches a multi-array string like [[value,value]],value]
+-   Matches object-style strings: directive.tablet(...values) OR directive[expression](...values)
+-   Matches string ID or class: literals Id(#) or class (.). Note that in Vue it needs to be in quotes attr="'#theId'"
+-   Matches simple directive function style: directive(#idOr.Class)
 
 **Examples**
+
 ```javascript
-getDirectivesFromString('directive.tablet(...values)') // {directive: {tablet: 'values'}}
-getDirectivesFromString('[[value,value]],value]') // {directive: 'values', directive2: 'values'}
-getDirectivesFromString('directive.tablet|mobile(...values)') // {directive: {tablet: 'values', mobile: 'values'}}
-getDirectivesFromString('directive.tablet(...values)') // {directive: {tablet: 'values'}}
+getDirectivesFromString('directive.tablet(...values)'); // {directive: {tablet: 'values'}}
+getDirectivesFromString('[[value,value]],value]'); // {directive: 'values', directive2: 'values'}
+getDirectivesFromString('directive.tablet|mobile(...values)'); // {directive: {tablet: 'values', mobile: 'values'}}
+getDirectivesFromString('directive.tablet(...values)'); // {directive: {tablet: 'values'}}
 ```
 
 ---
 
-
 ### findAndReplaceInArray
+
 **Function Signature**
+
 ```javascript
 function findAndReplaceInArray(arr: Array, find: String, value: Array|Object|String): Null|Array;
 ```
+
 Recursively will loop in array to find the desired target.
 
-- **Function**: `findAndReplaceInArray(arr, find, value)`
-- **Parameters**: `{Array} arr`, `{String} find`, `{Array|Object|String} value`
-- **Returns**: `{Null|Array}`
+-   **Function**: `findAndReplaceInArray(arr, find, value)`
+-   **Parameters**: `{Array} arr`, `{String} find`, `{Array|Object|String} value`
+-   **Returns**: `{Null|Array}`
 
 **Examples**
+
 ```javascript
 /**
  * Recursively will loop in array to find the desired target
@@ -75,24 +116,27 @@ Recursively will loop in array to find the desired target.
  * @param {Array|Object|String} value Replacer
  * @return {Null|Array}
  * @example findAndReplaceInArray([1,2,3,4,5], 3, 'three') // [1,2,'three',4,5]
- */  
+ */
 ```
 
 ---
 
 ### getMatchInBetween
+
 **Function Signature**
+
 ```javascript
 function getMatchInBetween(str: String, p1: String|Regex, p2: String|Regex, all: Boolean): String|Array|Null;
 ```
+
 Find a match in between two delimeters, either string or regex given, returns clean matches.
 
-- **Function**: `getMatchInBetween(str, p1, p2, all)`
-- **Parameters**: `{String} str`, `{String|Regex} p1`, `{String|Regex} p2`, `{Boolean} all`
-- **Returns**: `{String|Array|Null}`
-
+-   **Function**: `getMatchInBetween(str, p1, p2, all)`
+-   **Parameters**: `{String} str`, `{String|Regex} p1`, `{String|Regex} p2`, `{Boolean} all`
+-   **Returns**: `{String|Array|Null}`
 
 **Examples**
+
 ```javascript
 /**
  * find a match in between two delimeters, either string or regex given, returns clean matches
@@ -110,8 +154,9 @@ Find a match in between two delimeters, either string or regex given, returns cl
 
 ---
 
-### getMatchBlock  
-``getMatchBlock(str, p1, p2, all = false)``  
+### getMatchBlock
+
+`getMatchBlock(str, p1, p2, all = false)`
 
 ```javascript
 /**
@@ -126,19 +171,22 @@ Find a match in between two delimeters, either string or regex given, returns cl
  * @example getMatchBlock('is a hello world today', 'h', 'd', true) // ['hello world']
  * @example getMatchBlock('is a <hello world/> today', '<', '/>') // '<hello world/>'
  */
-```  
+```
 
 ---
 
-### cleanStr  
-Clean a string from delimeters or just trimmed if no delimeters given  
+### cleanStr
+
+Clean a string from delimeters or just trimmed if no delimeters given
 
 **Function Signature**
+
 ```javascript
 function cleanStr(str: String, p1: String|Regex, p2: String|Regex): String;
 ```
 
 **Examples**
+
 ```javascript
 /**
  * Clean a string from delimeters or just trimmed if no delimeters given
@@ -158,11 +206,11 @@ function cleanStr(str: String, p1: String|Regex, p2: String|Regex): String;
 
 ---
 
-### setExpString  
-Scapes a string to create a regex or returns the regex if it already is an expression  
+### setExpString
 
+Scapes a string to create a regex or returns the regex if it already is an expression
 
-``setExpString(exp)``  
+`setExpString(exp)`
 
 ```
 /**
@@ -175,12 +223,14 @@ Scapes a string to create a regex or returns the regex if it already is an expre
  * @example setExpString([hello]) // \\[hello\\/ then use like new new RegExp(setExpString(StringOrRegex))
  */
 ```
+
 ---
 
-### setLookUpExp  
-Regex builder to get a match in between two delimeters  
+### setLookUpExp
 
-``setLookUpExp(p1, p2)``  
+Regex builder to get a match in between two delimeters
+
+`setLookUpExp(p1, p2)`
 
 ```javascript
 /**
@@ -197,16 +247,20 @@ const text = "Hello World. Sunshine is here! Have fun!";
 const matches = text.match(regex);
 console.log(matches);  // Output: [". Sunshine is here!"]
  */
-```  
+```
+
 ---
 
 ### removeQuotes
+
 **Function Signature**
+
 ```javascript
 function removeQuotes(str: String): String;
 ```
 
 **Examples**
+
 ```javascript
 /**
  * Remove quotes from a string
@@ -221,6 +275,7 @@ function removeQuotes(str: String): String;
 ---
 
 ### fixQuotes
+
 ```javascript
 /**
  * Fix quotes from a string
@@ -235,6 +290,7 @@ function removeQuotes(str: String): String;
 ---
 
 ### addQuotes
+
 ```javascript
 /**
  * Add quotes to a string
@@ -242,6 +298,5 @@ function removeQuotes(str: String): String;
  * @param {String} str
  * @return {String}
  * @example addQuotes('hello') // "hello"
- */  
- ```  
-
+ */
+```
